@@ -1,0 +1,90 @@
+[
+{ 
+    
+    "name": "ЛКП 'ЛЕВ' ",
+    "logo": "logoFriends/logo1.png",
+    "worktime": ["9:00 - 19:00","9:00 - 19:00","9:00 - 19:00","9:00 - 19:00","9:00 - 19:00", "9:00 - 19:00","9:00 - 19:00"
+    ],
+    "adress": "Promuslova Street, 56",
+    "email": "lkplev@gmail.com",
+    "phone": "(032) 293-30-41"
+},
+{ 
+    
+    "name": "Барбос",
+    "logo": "logoFriends/logo2.png",
+    "worktime": ["8:00 - 20:00","8:00 - 20:00","8:00 - 20:00","8:00 - 20:00","8:00 - 20:00", "8:00 - 20:00","9:00 - 16:00"
+    ],
+    "adress": "Grigorenka Street, 25",
+    "email": "barbos@gmail.com",
+    "phone": "066 488 0480"
+},
+{ 
+    
+    "name": "Whiskas",
+    "logo": "logoFriends/logo3.png",
+    "worktime": [],
+    "adress": "",
+    "email": "whiskas@gmail.com",
+    "phone": "0–800–500–155"
+},
+{ 
+    
+    "name": "Happy paw",
+    "logo": "logoFriends/logo4.png",
+    "worktime": ["9:00 - 19:00","9:00 - 19:00","9:00 - 19:00","9:00 - 19:00","9:00 - 19:00", "9:00 - 19:00","9:00 - 19:00"
+    ],
+    "adress": "Chota Rystaveli Street, 44",
+    "email": "hello@happypaw.ua",
+    "phone": "+380 44 290-03-29"
+},
+{ 
+    
+    "name": "PetHelp",
+    "logo": "logoFriends/logo5.png",
+    "worktime": [],
+    "adress": "",
+    "email": "pithelp.ukr@gmail.com",
+    "phone": ""
+},
+{ 
+    
+    "name": "Сіріус",
+    "logo": "logoFriends/logo6.png",
+    "worktime": ["11:00 - 16:00","11:00 - 16:00","11:00 - 16:00","11:00 - 16:00","11:00 - 16:00","",""],
+    "adress": "Fedorivka, Kyiv Oblast",
+    "email": "dogcat.sirius@gmail.com",
+    "phone": "+38 093 193 40 69"
+},
+{ 
+    
+    "name": "PURINA",
+    "logo": "logoFriends/logo7.png",
+    "worktime": [],
+    "adress": "",
+    "email": "info@ua.nestle.com",
+    "phone": "1-800-778-7462"
+},
+{ 
+    
+    "name": "Josera",
+    "logo": "logoFriends/logo8.png",
+    "worktime": ["9:00 - 17:00","9:00 - 17:00","9:00 - 17:00","9:00 - 17:00","9:00 - 17:00", "9:00 - 17:00","9:00 - 17:00"
+    ],
+    "adress": "Sholom-Aleikhema St, 11",
+    "email": "info@josera.ua",
+    "phone": "0800 409 060"
+},
+{ 
+   
+    "name": "LICO",
+    "logo": "logoFriends/logo8.png",
+    "worktime": ["9:00 - 20:00","9:00 - 20:00","9:00 - 20:00","9:00 - 20:00","9:00 - 20:00", "9:00 - 20:00","9:00 - 20:00"
+    ],
+    "adress": "Dryhetiv Street, 77",
+    "email": "lico@gmail.com",
+    "phone": "+38 097 509 8005"
+}
+
+
+]
