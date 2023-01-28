@@ -23,9 +23,7 @@ router.get("/", async (req, res) => {
 
 // *************************8
 
-router.get("/current", auth, controller.current);
-
-router.get("/pets", auth, controller.get);
+router.get("/current", auth, controller.get);
 
 router.post("/pets", auth, upload.single("avatar"), controller.create);
 

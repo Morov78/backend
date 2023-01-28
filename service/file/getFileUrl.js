@@ -1,19 +1,33 @@
 const path = require("path");
-const fs = require("fs/promises");
 
-const getFileUrl = (file, uploadDir, fileName) => {
-  const avatarDir = path.join(process.cwd(), "public", uploadDir);
+const Jimp = require("jimp");
 
-  const { filename, path: tempUpload } = file;
+const getFileUrl = (file, uploadDir, fileName, size) => {
+  try {
+    const avatarDir = path.join(process.cwd(), "public", uploadDir);
 
-  const [extention] = filename.split(".").reverse();
+    const { filename, path: tempUpload } = file;
 
-  const avatarName = `${fileName}.${extention}`;
-  const avatarUpload = path.join(avatarDir, avatarName);
+    const [extention] = filename.split(".").reverse();
 
-  fs.rename(tempUpload, avatarUpload);
+    const avatarName = `${fileName}.${extention}`;
+    const avatarUpload = path.join(avatarDir, avatarName);
 
-  return path.join(uploadDir, avatarName);
+    Jimp.read(tempUpload, (error, workfile) => {
+      if (error) {
+        console.log(error);
+        throw error;
+      }
+
+      workfile.resize(...size).write(avatarUpload);
+    });
+
+    // fs.rename(tempUpload, avatarUpload);
+
+    return path.join(uploadDir, avatarName);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 module.exports = getFileUrl;

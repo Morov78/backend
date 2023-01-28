@@ -1,17 +1,11 @@
 const Pet = require("./schemas/pet");
 
-const addPet = async (name, birthdate, breed, comments, owner) => {
-  return Pet.create({
-    name,
-    birthdate,
-    breed,
-    comments,
-    owner,
-  });
+const addPet = async (user) => {
+  return Pet.create(user);
 };
 
 const listPets = async (_id) => {
-  return Pet.find({ owner: _id });
+  return Pet.find({ owner: _id }, { owner: 0 });
 };
 
 const updatePetAvatar = async (_id, avatar) => {
