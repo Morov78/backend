@@ -40,10 +40,10 @@ const validateUser = async (req, res, next) => {
 };
 
 const validateUpdateField = async (req, res, next) => {
-  const { field } = req.query;
+  const { fieldName } = req.params;
 
-  if (!userFieldsUpdate.includes(field)) {
-    return res.status(400).json({ message: `Missing field ${field}` });
+  if (!userFieldsUpdate.includes(fieldName)) {
+    return res.status(400).json({ message: `Missing field ${fieldName}` });
   }
 
   // перевірка типу значення поля

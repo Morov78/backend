@@ -2,10 +2,7 @@
 const createToken = require("../../service/token/createToken");
 const serviceUser = require("../../service/user");
 
-const path = require("path");
-const fs = require("fs/promises");
-
-const avatarDir = path.join(process.cwd(), "public", "avatars");
+const getFileUrl = require("../../service/file/getFileUrl");
 
 const registration = async (req, res, next) => {
   try {
@@ -77,29 +74,20 @@ const logout = async (req, res, next) => {
 const update = async (req, res, next) => {
   try {
     const { fieldName } = req.params;
-    let { value } = req.body;
+    let value = req.body[fieldName];
     const { _id } = req.user;
 
     if (fieldName === "avatar") {
-      const { filename, path: tempUpload } = req.file;
-
-      const [extention] = filename.split(".").reverse();
-
-      const avatarName = `${_id}.${extention}`;
-      const avatarUpload = path.join(avatarDir, avatarName);
-
-      fs.rename(tempUpload, avatarUpload);
-
-      value = path.join("avatars", avatarName);
+      value = getFileUrl(req.file, "users", _id);
     }
 
-    const result = await serviceUser.updateUser(_id, fieldName, value);
+    const body = { [fieldName]: value };
+
+    const result = await serviceUser.updateUser(_id, body);
 
     if (result) {
-      return res.status(200).json({ [fieldName]: result[fieldName] });
+      return res.status(200).json(body);
     }
-
-    // res.status(404).json({ message: "Not found" });
   } catch (error) {
     next(error);
   }
