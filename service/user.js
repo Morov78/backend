@@ -21,14 +21,10 @@ const updateToken = async (id, token = null) => {
   );
 };
 
-const updateUser = async (_id, field, value) => {
-  return User.findOneAndUpdate(
-    _id,
-    { [field]: value },
-    {
-      returnDocument: "after",
-    }
-  );
+const updateUser = async (_id, body) => {
+  return User.findOneAndUpdate(_id, body, {
+    returnDocument: "after",
+  });
 };
 
 module.exports = {
