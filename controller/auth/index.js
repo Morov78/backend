@@ -4,6 +4,9 @@ const serviceUser = require("../../service/user");
 
 const getFileUrl = require("../../service/file/getFileUrl");
 
+const mainDir = "users";
+const sizeAvatar = [233, 233];
+
 const registration = async (req, res, next) => {
   try {
     const { email, password, name, location, phone } = req.body;
@@ -78,7 +81,7 @@ const update = async (req, res, next) => {
     const { _id } = req.user;
 
     if (fieldName === "avatar") {
-      value = getFileUrl(req.file, "users", _id);
+      value = getFileUrl(req.file, mainDir, _id, sizeAvatar);
     }
 
     const body = { [fieldName]: value };
