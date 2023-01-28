@@ -10,14 +10,6 @@ const {
 const auth = require("../../middlewares/auth");
 const upload = require("../../middlewares/upload");
 
-// const {
-//   validateUser,
-//   ValidateSubscription,
-//   validateEmail,
-// } = require("../../middlewares/validator");
-
-// цей роутер не треба для проекту
-
 router.post("/register", validateUser, controller.registration); // validateUser
 
 router.post("/login", controller.login); // validateUser//

@@ -1,19 +1,18 @@
-// const gravatar = require("gravatar");
-
 const User = require("./schemas/user");
 
+// +
 const getUser = async (email) => {
   return await User.findOne({ email });
 };
-
-const addUser = async (email, password, name, location, phone) => {
+// +
+const addUser = async (email, name, location, phone, password) => {
   const newUser = new User({ email, name, location, phone });
 
   newUser.setPassword(password);
 
   return await newUser.save();
 };
-
+// +
 const updateToken = async (id, token = null) => {
   return await User.findByIdAndUpdate(
     id,
