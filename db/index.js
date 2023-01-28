@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+mongoose.Promise = global.Promise;
+
 const { URI_DB, DB_NAME } = process.env;
 
 mongoose.set("strictQuery", false);
