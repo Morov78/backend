@@ -76,11 +76,11 @@ const logout = async (req, res, next) => {
 
 const update = async (req, res, next) => {
   try {
-    const { field } = req.query;
+    const { fieldName } = req.params;
     let { value } = req.body;
     const { _id } = req.user;
 
-    if (field === "avatar") {
+    if (fieldName === "avatar") {
       const { filename, path: tempUpload } = req.file;
 
       const [extention] = filename.split(".").reverse();
@@ -93,10 +93,10 @@ const update = async (req, res, next) => {
       value = path.join("avatars", avatarName);
     }
 
-    const result = await serviceUser.updateUser(_id, field, value);
+    const result = await serviceUser.updateUser(_id, fieldName, value);
 
     if (result) {
-      return res.status(200).json({ field: value });
+      return res.status(200).json({ [fieldName]: result[fieldName] });
     }
 
     // res.status(404).json({ message: "Not found" });

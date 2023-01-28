@@ -17,10 +17,10 @@ router.post("/login", controller.login); // validateUser//
 router.post("/logout", auth, controller.logout); // auth
 
 router.patch(
-  "/update",
+  "/update/:fieldName",
   auth,
-  validateUpdateField,
   upload.single("avatar"),
+  validateUpdateField,
   controller.update
 );
 
